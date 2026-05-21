@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-300">
       <div className="container-custom section-padding pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-[980px]:grid-cols-4 lg:grid-cols-4 gap-12 lg:gap-8">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-white">

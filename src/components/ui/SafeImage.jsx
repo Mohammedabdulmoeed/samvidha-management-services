@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import { images } from '../../data/images';
 
-export default function SafeImage({ src, alt, className = '', fallback = images.placeholder }) {
+export default function SafeImage({
+  src,
+  alt,
+  className = '',
+  fallback = images.office,
+  loading = 'lazy',
+  priority = false,
+  width,
+  height,
+}) {
   const [imgSrc, setImgSrc] = useState(src);
 
   return (
@@ -9,8 +18,11 @@ export default function SafeImage({ src, alt, className = '', fallback = images.
       src={imgSrc}
       alt={alt}
       className={className}
-      loading="lazy"
+      width={width}
+      height={height}
+      loading={priority ? 'eager' : loading}
       decoding="async"
+      fetchPriority={priority ? 'high' : undefined}
       onError={() => {
         if (imgSrc !== fallback) setImgSrc(fallback);
       }}

@@ -33,6 +33,7 @@ export default function Button({
   onClick,
   className = '',
   type = 'button',
+  'aria-label': ariaLabel,
   ...props
 }) {
   const classes = `inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-colors duration-300 ${variants[variant]} ${sizes[size]} ${className}`;
@@ -40,7 +41,7 @@ export default function Button({
   if (to) {
     return (
       <motion.div {...motionProps} className="inline-block">
-        <Link to={to} className={classes} {...props}>
+        <Link to={to} className={classes} aria-label={ariaLabel} {...props}>
           {children}
         </Link>
       </motion.div>
@@ -63,7 +64,14 @@ export default function Button({
   }
 
   return (
-    <motion.button type={type} onClick={onClick} className={classes} {...motionProps} {...props}>
+    <motion.button
+      type={type}
+      onClick={onClick}
+      className={classes}
+      aria-label={ariaLabel}
+      {...motionProps}
+      {...props}
+    >
       {children}
     </motion.button>
   );

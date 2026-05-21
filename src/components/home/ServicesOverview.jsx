@@ -23,7 +23,7 @@ export default function ServicesOverview() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid-desktop-4"
         >
           {servicesOverview.map((service, i) => (
             <HoverCard

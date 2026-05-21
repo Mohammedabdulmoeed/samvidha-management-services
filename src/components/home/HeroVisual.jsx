@@ -55,7 +55,7 @@ export default function HeroVisual({ reducedMotion: reducedMotionProp }) {
 
   return (
     <motion.div
-      className="relative h-[min(620px,72vh)] w-full"
+      className="relative h-[min(480px,58vh)] w-full min-[980px]:h-[min(540px,62vh)] lg:h-[min(620px,72vh)] max-w-full"
       aria-hidden="true"
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}

@@ -31,7 +31,7 @@ export default function StatsSection() {
           whileInView="visible"
           viewport={{ once: true }}
           animate="visible"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+          className="grid grid-cols-2 min-[980px]:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12"
         >
           {stats.map((stat, i) => (
             <motion.div

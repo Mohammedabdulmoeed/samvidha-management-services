@@ -1,4 +1,5 @@
 import SEO from '../components/common/SEO';
+import { pageSeo } from '../data/seo';
 import Hero from '../components/home/Hero';
 import ServicesOverview from '../components/home/ServicesOverview';
 import AboutSection from '../components/home/AboutSection';
@@ -12,10 +13,7 @@ import ContactCTA from '../components/home/ContactCTA';
 export default function HomePage() {
   return (
     <>
-      <SEO
-        title="Home"
-        description="Samvidha Management Services - Reliable facility management, electrician, plumbing, housekeeping, and STP plant maintenance across India."
-      />
+      <SEO {...pageSeo.home} />
       <Hero />
       <ServicesOverview />
       <AboutSection />

@@ -29,8 +29,10 @@ export default function Testimonials() {
             pagination={{ clickable: true }}
             autoplay={{ delay: 4500, disableOnInteraction: false }}
             breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 24 },
+              980: { slidesPerView: 2, spaceBetween: 24 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
             }}
             className="pb-14"
           >
@@ -51,8 +53,12 @@ export default function Testimonials() {
                   <div className="flex items-center gap-4">
                     <img
                       src={t.image}
-                      alt={t.name}
+                      alt={`${t.name}, ${t.role}`}
                       className="h-12 w-12 rounded-full object-cover ring-2 ring-brand-100"
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div>
                       <p className="font-semibold text-slate-900">{t.name}</p>

@@ -33,12 +33,17 @@ export default function Header({ onQuoteClick }) {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navClass}`}>
       <div className="container-custom flex items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
+        <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="Samvidha Management home">
         <img
-  src={logo}
-  alt="Samvidha Logo"
- className="h-20 w-auto object-contain"
-/>
+          src={logo}
+          alt="Samvidha Management Services logo"
+          className="h-20 w-auto object-contain"
+          width={160}
+          height={80}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
           {/* <div>
             <span className={`block font-display font-bold text-lg leading-tight ${logoTextClass}`}>
               Samvidha
@@ -49,7 +54,7 @@ export default function Header({ onQuoteClick }) {
           </div> */}
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
@@ -87,7 +92,9 @@ export default function Header({ onQuoteClick }) {
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
           className={`lg:hidden p-2 rounded-lg ${textClass}`}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -101,7 +108,7 @@ export default function Header({ onQuoteClick }) {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white border-t border-slate-200 shadow-xl"
           >
-            <nav className="container-custom py-4 flex flex-col gap-1">
+            <nav id="mobile-navigation" className="container-custom py-4 flex flex-col gap-1" aria-label="Mobile navigation">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}

@@ -7,7 +7,12 @@ import Button from '../components/ui/Button';
 export default function NotFoundPage() {
   return (
     <>
-      <SEO title="Page Not Found" description="The page you are looking for does not exist." />
+      <SEO
+        title="Page Not Found | Samvidha Management Services"
+        description="The page you are looking for does not exist on Samvidha Management Services."
+        path="/404"
+        noindex
+      />
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-brand-900 to-slate-900 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

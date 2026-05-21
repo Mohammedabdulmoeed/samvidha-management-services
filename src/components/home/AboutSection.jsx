@@ -16,24 +16,24 @@ export default function AboutSection() {
   return (
     <section className="section-padding overflow-hidden">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="row-split lg:gap-16">
           <motion.div
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             animate="visible"
-            className="relative group"
+            className="relative group row-split-media"
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              className="relative rounded-2xl overflow-hidden shadow-2xl"
+              className="media-frame shadow-2xl"
             >
               <SafeImage
                 src={images.office}
                 alt="Samvidha facility management team"
-                className="w-full object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-105"
+                className="w-full object-cover aspect-[4/3] max-h-[clamp(16rem,42vw,28rem)] transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
@@ -57,6 +57,7 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             animate="visible"
+            className="row-split-content"
           >
             <span className="text-sm font-semibold uppercase tracking-widest text-brand-600">
               About Samvidha

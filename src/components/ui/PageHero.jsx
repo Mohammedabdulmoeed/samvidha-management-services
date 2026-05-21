@@ -4,10 +4,15 @@ import { fadeInUp, staggerContainer } from '../../animations/variants';
 
 export default function PageHero({ title, subtitle, image, breadcrumb }) {
   return (
-    <section className="relative min-h-[45vh] md:min-h-[50vh] flex items-center overflow-hidden">
+    <section
+      className="relative min-h-[45vh] md:min-h-[50vh] flex items-center overflow-hidden"
+      aria-labelledby="page-hero-title"
+    >
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${image})` }}
+        role="presentation"
+        aria-hidden="true"
         initial={{ scale: 1.12 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
@@ -31,6 +36,7 @@ export default function PageHero({ title, subtitle, image, breadcrumb }) {
             </motion.p>
           )}
           <motion.h1
+            id="page-hero-title"
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl"
           >

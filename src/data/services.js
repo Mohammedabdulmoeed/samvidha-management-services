@@ -40,7 +40,7 @@ export const servicesOverview = [
     icon: Factory,
     shortDesc:
       'End-to-end sewage treatment plant operations, monitoring, compliance, and industrial maintenance support.',
-    image: images.stp,
+    image: images.STPUP,
     color: 'from-slate-600 to-slate-800',
   },
 ];

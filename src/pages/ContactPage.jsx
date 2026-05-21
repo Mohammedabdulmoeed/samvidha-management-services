@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import SEO from '../components/common/SEO';
+import { pageSeo } from '../data/seo';
 import PageHero from '../components/ui/PageHero';
 import Button from '../components/ui/Button';
 import Reveal from '../components/ui/Reveal';
@@ -199,10 +200,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <SEO
-        title="Contact"
-        description="Contact Samvidha Management Services for facility management quotes, inquiries, and emergency support."
-      />
+      <SEO {...pageSeo.contact} />
 
       <PageHero
         title="Get In Touch"
@@ -216,7 +214,7 @@ export default function ContactPage() {
 
           {/* CONTACT CARDS */}
 
-          <div className="grid gap-6 mb-16 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid-desktop-4 gap-6 mb-16">
             {contactCards.map((card, index) => (
               <HoverCard
                 key={card.title}
@@ -248,7 +246,7 @@ export default function ContactPage() {
 
           {/* CONTACT FORM + MAP */}
 
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="row-split gap-12">
 
             {/* FORM */}
 

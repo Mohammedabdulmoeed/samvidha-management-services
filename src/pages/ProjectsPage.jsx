@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 import SEO from '../components/common/SEO';
+import { pageSeo } from '../data/seo';
 import PageHero from '../components/ui/PageHero';
 import SectionHeading from '../components/ui/SectionHeading';
 import SafeImage from '../components/ui/SafeImage';
@@ -19,10 +20,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <SEO
-        title="Projects"
-        description="Explore Samvidha Management Services project gallery - electrical, plumbing, housekeeping, and STP plant work."
-      />
+      <SEO {...pageSeo.projects} />
       <PageHero
         title="Projects & Gallery"
         subtitle="Showcasing our expertise across facility management projects."
@@ -59,7 +57,7 @@ export default function ProjectsPage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 min-[980px]:grid-cols-3 lg:grid-cols-3 gap-6">
             {filtered.map((project, index) => (
               <Reveal key={project.id} delay={index * 0.05}>
                 <button
@@ -73,7 +71,7 @@ export default function ProjectsPage() {
                   <SafeImage
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full aspect-[4/3] max-h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                     <span className="text-brand-300 text-xs font-semibold uppercase">{project.category}</span>

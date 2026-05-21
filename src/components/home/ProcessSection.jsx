@@ -31,13 +31,13 @@ export default function ProcessSection() {
           className="relative"
         >
           <motion.div
-            className="hidden lg:block absolute top-16 left-[10%] right-[10%] h-1 rounded-full bg-gradient-to-r from-brand-200 via-brand-500 to-brand-200 origin-left"
+            className="hidden min-[980px]:block absolute top-16 left-[10%] right-[10%] h-1 rounded-full bg-gradient-to-r from-brand-200 via-brand-500 to-brand-200 origin-left"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid-desktop-5">
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}

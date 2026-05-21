@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: 'What areas do you serve?',
     answer:
-      'We provide facility management and maintenance services across Delhi NCR, Uttar Pradesh, and select regions in North India. Contact us to confirm service availability in your location.',
+      'We provide facility management and maintenance services in Hyderabad, Telangana. Contact us to confirm service availability in your location.',
   },
   {
     question: 'Do you offer emergency services?',

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { useOutletContext } from 'react-router-dom';
 import SEO from '../components/common/SEO';
+import { pageSeo } from '../data/seo';
 import PageHero from '../components/ui/PageHero';
 import Button from '../components/ui/Button';
 import SafeImage from '../components/ui/SafeImage';
@@ -17,10 +18,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <SEO
-        title="Services"
-        description="Professional electrician, plumbing, housekeeping, and STP plant maintenance services by Samvidha Management Services."
-      />
+      <SEO {...pageSeo.services} />
       <PageHero
         title="Our Services"
         subtitle="Comprehensive facility management solutions tailored to your property needs."
@@ -36,7 +34,7 @@ export default function ServicesPage() {
             whileInView="visible"
             viewport={{ once: true }}
             animate="visible"
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            className="grid-desktop-4 gap-4"
           >
             {servicesOverview.map((s) => (
               <motion.a
@@ -66,8 +64,11 @@ export default function ServicesPage() {
             className={`section-padding ${index % 2 === 0 ? '' : 'bg-slate-50'}`}
           >
             <div className="container-custom">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <Reveal className={reversed ? 'lg:order-2' : ''} delay={0.05}>
+              <div className="row-split">
+                <Reveal
+                  className={`row-split-content ${reversed ? 'order-split-second min-[980px]:order-2 lg:order-2' : 'order-split-first'}`}
+                  delay={0.05}
+                >
                   <span className="text-sm font-semibold uppercase tracking-widest text-brand-600">
                     {overview?.title}
                   </span>
@@ -107,16 +108,19 @@ export default function ServicesPage() {
                   </Button>
                 </Reveal>
 
-                <Reveal className={reversed ? 'lg:order-1' : ''} delay={0.1}>
+                <Reveal
+                  className={`row-split-media ${reversed ? 'order-split-first min-[980px]:order-1 lg:order-1' : 'order-split-second'}`}
+                  delay={0.1}
+                >
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: 'spring', stiffness: 300 }}
-                    className="rounded-2xl overflow-hidden shadow-2xl group"
+                    className="media-frame shadow-2xl group"
                   >
                     <SafeImage
                       src={service.image}
                       alt={service.title}
-                      className="w-full object-cover aspect-[4/3] bg-slate-200 transition-transform duration-700 group-hover:scale-105"
+                      className="w-full object-cover aspect-[4/3] max-h-[clamp(16rem,42vw,28rem)] bg-slate-200 transition-transform duration-700 group-hover:scale-105"
                     />
                   </motion.div>
                 </Reveal>

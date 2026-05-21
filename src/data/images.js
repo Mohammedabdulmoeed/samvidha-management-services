@@ -7,6 +7,7 @@ import Facility_Staff_Deployment from '../assets/hero/Facility-Staff-Deployment.
 import Water_Tank_Maintenance from '../assets/hero/Water-Tank-Maintenance.jpg';
 import LED_Lighting_Retrofit from '../assets/hero/LED-Lighting-Retrofit.jpg';
 import office from '../assets/hero/office.jpg';
+import STPUP from '../assets/hero/STPUP.jpg';
 
 
 export const images = {
@@ -19,4 +20,8 @@ export const images = {
   Water_Tank_Maintenance,
   LED_Lighting_Retrofit,
   office,
+  STPUP,
+  construction: office,
+  building: STP_Monitoring,
+  placeholder: office,
 };

@@ -1,6 +1,7 @@
 ﻿import { motion } from 'framer-motion';
 import { Shield, Target, Eye, Award, CheckCircle2, BadgeCheck } from 'lucide-react';
 import SEO from '../components/common/SEO';
+import { pageSeo } from '../data/seo';
 import PageHero from '../components/ui/PageHero';
 import SectionHeading from '../components/ui/SectionHeading';
 import { team, coreValues, timeline } from '../data/team';
@@ -51,10 +52,7 @@ const safetyQuality = [
 export default function AboutPage() {
   return (
     <>
-      <SEO
-        title="About Us"
-        description="Learn about Samvidha Management Services - our mission, vision, team, and commitment to excellence in facility management."
-      />
+      <SEO {...pageSeo.about} />
       <PageHero
         title="About Samvidha Management Services"
         subtitle="Building trust through excellence in facility management since 2023."
@@ -123,7 +121,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid-desktop-3"
           >
             {coreValues.map((v, i) => (
               <HoverCard key={v.title} variant={fadeInUp} delay={i * 0.05} className="border border-slate-200 p-6 bg-white">
@@ -138,7 +136,7 @@ export default function AboutPage() {
       <section className="section-padding bg-slate-900">
         <div className="container-custom">
           <SectionHeading label="Our Team" title="Meet the Leadership" light />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 min-[980px]:grid-cols-4 lg:grid-cols-4 gap-6">
             {team.map((member) => (
               <motion.div
                 key={member.name}
@@ -153,8 +151,12 @@ export default function AboutPage() {
                 <div className="aspect-[4/5] overflow-hidden bg-slate-700">
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={`${member.name}, ${member.role} at Samvidha Management`}
                     className="h-full w-full object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                    width={320}
+                    height={400}
                   />
                 </div>
                 <div className="p-5">
@@ -206,7 +208,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
-            className="grid lg:grid-cols-2 gap-8"
+            className="row-split gap-8"
           >
             {safetyQuality.map((item, i) => {
               const Icon = item.icon;

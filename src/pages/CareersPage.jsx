@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Briefcase, Clock, Send, X, Upload, Loader2 } from 'lucide-react';
 import SEO from '../components/common/SEO';
+import { pageSeo } from '../data/seo';
 import PageHero from '../components/ui/PageHero';
 import SectionHeading from '../components/ui/SectionHeading';
 import Button from '../components/ui/Button';
@@ -576,10 +577,7 @@ export default function CareersPage() {
 
   return (
     <>
-      <SEO
-        title="Careers"
-        description="Join Samvidha Management Services - explore job openings for electricians, plumbers, housekeeping, and STP operators."
-      />
+      <SEO {...pageSeo.careers} />
 
       <PageHero
         title="Build Your Career With Us"
@@ -647,7 +645,7 @@ export default function CareersPage() {
       </section>
 
       <section className="section-padding bg-slate-50">
-        <div className="container-custom grid gap-12 lg:grid-cols-2">
+        <div className="container-custom row-split gap-12">
        
         </div>
       </section>
